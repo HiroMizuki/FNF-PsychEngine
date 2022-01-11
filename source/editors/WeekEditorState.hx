@@ -338,7 +338,7 @@ class WeekEditorState extends MusicBeatState
 		
 		var isMissing:Bool = true;
 		if(assetName != null && assetName.length > 0) {
-			if( #if MODS_ALLOWED FileSystem.exists(Paths.modsImages('storymenu/' + assetName)) || #end
+			if( #if MODS_ALLOWED FileSystem.exists(Paths.modsImages('storymenu/' + assetName + '.png')) || #end
 			Assets.exists(Paths.getPath('images/storymenu/' + assetName, IMAGE), IMAGE)) {
 				weekThing.loadGraphic(Paths.image('storymenu/' + assetName));
 				isMissing = false;
@@ -354,7 +354,7 @@ class WeekEditorState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Week Editor", "Editting: " + weekFileName);
+		DiscordClient.changePresence("Week Editor", "Editing: " + weekFileName);
 		#end
 	}
 	
